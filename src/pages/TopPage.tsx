@@ -1,7 +1,8 @@
 import React, { FC } from "react";
+import TopHeader from "./TopHeader";
 
 const TopPage: FC = () => {
-  return <h2>TopPageコンポーネント</h2>;
+  return <TopHeader />;
 };
 
 export default TopPage;

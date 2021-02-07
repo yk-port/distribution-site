@@ -4,7 +4,9 @@ import React, { FC } from "react";
 const TopHeader: FC = () => {
   return (
     <AppBar>
-      <Toolbar></Toolbar>
+      <Toolbar>
+        <h2>header</h2>
+      </Toolbar>
     </AppBar>
   );
 };
