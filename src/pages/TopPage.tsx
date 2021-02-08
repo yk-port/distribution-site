@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ResultPage from "./ResultPage";
-import TopHeader from "./TopHeader";
-import TopMain from "./TopMain";
+import TopHeader from "../components/topPage/TopHeader";
+import TopMain from "../components/topPage/TopMain";
 
 const TopPage: FC = () => {
   return (

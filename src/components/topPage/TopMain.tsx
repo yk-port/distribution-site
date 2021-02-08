@@ -8,12 +8,12 @@ import {
   Paper,
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import pencil from "../assets/images/pencil.jpg";
+import bgImage from "../../assets/images/bg.jpg";
 
 const useStyle = makeStyles(() =>
   createStyles({
     background: {
-      backgroundImage: `url(${pencil})`,
+      backgroundImage: `url(${bgImage})`,
       backgroundSize: "cover",
       height: "100vh",
     },
