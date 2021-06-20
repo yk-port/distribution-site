@@ -1,4 +1,6 @@
 import React, { FC, useState } from "react";
+// ページ遷移をするために必要なモジュール
+import { useHistory } from "react-router-dom";
 
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import { IconButton, Paper, InputBase } from "@material-ui/core";
@@ -28,6 +30,8 @@ const useStyle = makeStyles(() =>
 
 const TopMain: FC = () => {
   const classes = useStyle();
+  // importしたuseHistoryモジュールをコンポーネント内で呼び出せるようにhistoryに代入する
+  const history = useHistory();
 
   const [keyword, setKeyword] = useState("");
 
@@ -35,9 +39,14 @@ const TopMain: FC = () => {
     setKeyword(event.target.value);
   };
 
+  const handleSubmit = () => {
+    // useHistoryモジュールから生成したインスタンスに対してpushメソッドを使うと遷移できる
+    history.push(`/search/${keyword}`);
+  };
+
   return (
     <div className={classes.background}>
-      <Paper className={classes.paper}>
+      <Paper className={classes.paper} component="form" onSubmit={handleSubmit}>
         <IconButton type="submit">
           <SearchIcon />
         </IconButton>
