@@ -2,8 +2,9 @@ import React, { FC } from "react";
 // BrowserRouterモジュールをRouterという名前で使用するための記述
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import TopHeader from "../components/topPage/topHeader";
-import TopMain from "../components/topPage/topMain";
+import ResultPage from "./ResultPage";
+import TopHeader from "../components/topPage/TopHeader";
+import TopMain from "../components/topPage/TopMain";
 
 const TopPage: FC = () => {
   return (
@@ -17,7 +18,7 @@ const TopPage: FC = () => {
         </Route>
         {/* /search/:keyword に一致する場合は以下のコンポーネントを表示 */}
         <Route path="/search/:keyword" exact>
-          検索結果
+          <ResultPage />
         </Route>
       </Switch>
     </Router>
