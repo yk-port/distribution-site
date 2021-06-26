@@ -1,9 +1,15 @@
-import React, { FC, useState } from "react";
-import firebase from "../../firebase";
+import React, { FC, useState, useEffect } from "react";
 import { TileData } from "../../types/types";
+
+import firebase from "../../firebase";
+// URLの値を取得するためのreact-router-domの関数
+import { useParams } from "react-router-dom";
 
 const ResultImageList: FC = () => {
   const [data, setData] = useState<TileData[]>([]);
+
+  // URLに含まれるkeywordの部分を取得するための記述
+  const { keyword } = useParams<any>();
 
   const getData = async (searchWord: string | undefined) => {
     const db = firebase.firestore();
@@ -26,6 +32,10 @@ const ResultImageList: FC = () => {
     setData(temporaryData as TileData[]);
   };
 
+  useEffect(() => {
+    getData(keyword);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return <div></div>;
 };
 
