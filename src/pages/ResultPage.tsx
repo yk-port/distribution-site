@@ -1,11 +1,12 @@
 import React, { FC } from "react";
+import ResultImageList from "../components/resultPage/ResultImageList";
 import TopHeader from "../components/topPage/TopHeader";
 
 const ResultPage: FC = () => {
   return (
     <div>
       <TopHeader />
-      検索結果
+      <ResultImageList />
     </div>
   );
 };

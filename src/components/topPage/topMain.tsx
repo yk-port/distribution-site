@@ -8,7 +8,7 @@ import { IconButton, Paper, InputBase } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import bgImage from "../../assets/images/mainBg.jpg";
 
-const useStyle = makeStyles(() =>
+const useStyles = makeStyles(() =>
   createStyles({
     background: {
       backgroundImage: `url(${bgImage})`,
@@ -29,7 +29,7 @@ const useStyle = makeStyles(() =>
 );
 
 const TopMain: FC = () => {
-  const classes = useStyle();
+  const classes = useStyles();
   // importしたuseHistoryモジュールをコンポーネント内で呼び出せるようにhistoryに代入する
   const history = useHistory();
 
